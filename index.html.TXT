@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sanji ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.typing {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  white-space: normal;
+  animation: fadeIn 3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 5px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  color: #ff4d6d;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  animation: float 6s linear infinite;
+}
+
+/* Hello Kitty */
+.kitty {
+  position: absolute;
+  width: 60px;
+  opacity: 0.7;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Happy Birthday Sanji ❤️</h1>
+
+  <div class="typing">
+    My Ranjan, those late night walks, e-rickshaw rides,  
+    and the way you admire everything...  
+    I just want to keep living those moments with you forever 💫
+  </div>
+
+  <!-- PHOTOS -->
+  <div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+  </div>
+
+  <button onclick="showMessage()">Tap for a surprise 😏</button>
+
+  <div id="msg" class="hidden">
+    You’re not just special… you’re my favorite habit ❤️  
+    So tell me… will you always be mine? 💫
+  </div>
+</div>
+
+<script>
+// Hearts
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 10 + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+
+// Hello Kitty
+const kittyImg = "https://upload.wikimedia.org/wikipedia/en/0/05/Hello_Kitty_character_portrait.png";
+
+function createKitty() {
+  const img = document.createElement("img");
+  img.src = kittyImg;
+  img.classList.add("kitty");
+  img.style.left = Math.random() * 100 + "vw";
+  img.style.width = (40 + Math.random() * 40) + "px";
+  document.body.appendChild(img);
+  setTimeout(() => img.remove(), 10000);
+}
+
+setInterval(createHeart, 300);
+setInterval(createKitty, 1200);
+
+function showMessage() {
+  document.getElementById("msg").style.display = "block";
+}
+</script>
+
+</body>
+</html>
